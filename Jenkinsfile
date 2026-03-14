@@ -13,13 +13,13 @@ pipeline {
             steps {
                 bat 'docker stop portfolio-container || exit 0'
                 bat 'docker rm portfolio-container || exit 0'
-                bat 'docker run -d -p 8080:80 --name portfolio-container portfolio-image'
+                bat 'docker run -d -p 8081:80 --name portfolio-container portfolio-image'
             }
         }
 
         stage('Open Website') {
             steps {
-                bat 'start http://localhost:8080'
+                bat 'start http://localhost:8081'
             }
         }
 
