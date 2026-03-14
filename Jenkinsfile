@@ -19,7 +19,7 @@ pipeline {
 
         stage('Open Website') {
             steps {
-                bat 'timeout /t 5'
+                bat 'ping 127.0.0.1 -n 6 > nul'
                 bat 'start http://localhost:8081'
             }
         }
